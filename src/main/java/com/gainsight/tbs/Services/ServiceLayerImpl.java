@@ -14,7 +14,7 @@ public class ServiceLayerImpl implements ServiceLayer{
     @Autowired
     PostRepo repo;
 
-    Logger logger = LoggerFactory.getLogger("SampleLogger");
+    Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public List<ticket> fetchTicket() {
