@@ -1,4 +1,4 @@
-package com.gainsight.tbs.Services;
+package com.gainsight.tbs.POJO;
 
 public enum Status
 {

@@ -1,12 +1,12 @@
-package com.gainsight.tbs.Services;
+package com.gainsight.tbs.POJO;
+import com.gainsight.tbs.POJO.Status;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.time.LocalDateTime;
 
 @Document(collection = "TBS")
 public class ticket
 {
-
+    @Id
     private int ticketNo;
     private Status status;
     private String time;

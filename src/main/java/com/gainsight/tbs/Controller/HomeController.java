@@ -1,8 +1,8 @@
 package com.gainsight.tbs.Controller;
 import java.util.*;
 
-import com.gainsight.tbs.Services.PostRepo;
-import com.gainsight.tbs.Services.ticket;
+import com.gainsight.tbs.POJO.ticket;
+import com.gainsight.tbs.Services.ServiceLayer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,18 +12,19 @@ public class HomeController
 {
 
     @Autowired
-    private PostRepo repo;
+    private ServiceLayer serviceLayer;
+
 
     @GetMapping("")
     public List<ticket> getCollection()
     {
-        return this.repo.findAll();
+        return serviceLayer.fetchTicket();
     }
 
     @PostMapping("")
     public ticket putCollection(@RequestBody ticket tic_obj)
     {
-           return  this.repo.save(tic_obj);
+        return serviceLayer.putTicket(tic_obj);
     }
 
 }
