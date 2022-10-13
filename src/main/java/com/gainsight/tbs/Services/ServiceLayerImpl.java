@@ -1,6 +1,7 @@
 package com.gainsight.tbs.Services;
 
 import com.gainsight.tbs.POJO.ticket;
+import com.gainsight.tbs.repository.PostRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.gainsight.tbs.Services;
+package com.gainsight.tbs.repository;
 
 import com.gainsight.tbs.POJO.ticket;
 import org.springframework.data.mongodb.repository.MongoRepository;
