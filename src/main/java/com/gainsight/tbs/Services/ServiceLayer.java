@@ -1,13 +1,14 @@
 package com.gainsight.tbs.Services;
 
+import com.gainsight.tbs.DTO.TicketDTO;
 import com.gainsight.tbs.POJO.ticket;
 
 import java.util.List;
 
 public interface ServiceLayer
 {
-    public List<ticket> fetchTicket();
-    public ticket putTicket(ticket tic_obj);
+    public List<TicketDTO> fetchTicket();
+    public TicketDTO putTicket(TicketDTO ticketDTO);
 
 
 }

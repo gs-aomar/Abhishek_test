@@ -1,7 +1,7 @@
 package com.gainsight.tbs.POJO;
-import com.gainsight.tbs.POJO.Status;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 
 @Document(collection = "TBS")
 public class ticket
@@ -10,10 +10,6 @@ public class ticket
     private int ticketNo;
     private Status status;
     private String time;
-
-    public ticket() {
-
-    }
 
     public int getTicketNo() {
         return ticketNo;
@@ -31,15 +27,11 @@ public class ticket
         this.status = status;
     }
 
-    public String getDateTime() {return time;}
-
-    public void setDateTime(String dateTime)
-    {
-        this.time = dateTime;
+    public String getTime() {
+        return time;
     }
 
-    @Override
-    public String toString() {
-        return "Collection{" + "ticketNo=" + ticketNo + ", Status='" + status + '\'' + ", dateTime=" + time + '}';
+    public void setTime(String time) {
+        this.time = time;
     }
 }

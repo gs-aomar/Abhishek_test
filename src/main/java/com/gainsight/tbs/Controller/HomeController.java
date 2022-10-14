@@ -1,6 +1,7 @@
 package com.gainsight.tbs.Controller;
 import java.util.*;
 
+import com.gainsight.tbs.DTO.TicketDTO;
 import com.gainsight.tbs.POJO.ticket;
 import com.gainsight.tbs.Services.ServiceLayer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +17,15 @@ public class HomeController
 
 
     @GetMapping("")
-    public List<ticket> getCollection()
+    public List<TicketDTO> getCollection()
     {
         return serviceLayer.fetchTicket();
     }
 
     @PostMapping("")
-    public ticket putCollection(@RequestBody ticket tic_obj)
+    public TicketDTO putCollection(@RequestBody TicketDTO ticketDTO)
     {
-        return serviceLayer.putTicket(tic_obj);
+        return serviceLayer.putTicket(ticketDTO);
     }
 
 }

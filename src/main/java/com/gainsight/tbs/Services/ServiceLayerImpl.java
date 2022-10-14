@@ -1,5 +1,7 @@
 package com.gainsight.tbs.Services;
 
+import com.gainsight.tbs.DTO.DTOconverter;
+import com.gainsight.tbs.DTO.TicketDTO;
 import com.gainsight.tbs.POJO.ticket;
 import com.gainsight.tbs.repository.PostRepo;
 import org.slf4j.Logger;
@@ -15,18 +17,26 @@ public class ServiceLayerImpl implements ServiceLayer{
     @Autowired
     PostRepo repo;
 
+    @Autowired
+    DTOconverter dTOconverter;
+
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
-    public List<ticket> fetchTicket() {
+    public List<TicketDTO> fetchTicket() {
         logger.info("Hii fetching all the information of the tickets");
-        return repo.findAll();
+        List<ticket> tickets= repo.findAll();
+        List<TicketDTO> ticketDTOS = dTOconverter.ticketListToTicketDTOListConvertr(tickets);
+        return ticketDTOS;
     }
 
     @Override
-    public ticket putTicket(ticket tic_obj) {
+    public TicketDTO putTicket(TicketDTO ticketDTO) {
         logger.info("Hii saving the information of the tickets");
-        return  this.repo.save(tic_obj);
+        ticket Ticket = new ticket();
+        Ticket = dTOconverter.ticketDTOToTicketConvertr(ticketDTO);
+        repo.save(Ticket);
+        return ticketDTO;
     }
 
 
