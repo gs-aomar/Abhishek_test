@@ -1,9 +1,11 @@
 package com.gainsight.tbs.POJO;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Document(collection = "TBS")
+@Data
 public class ticket
 {
     @Id
@@ -11,27 +13,4 @@ public class ticket
     private Status status;
     private String time;
 
-    public int getTicketNo() {
-        return ticketNo;
-    }
-
-    public void setTicketNo(int ticketNo) {
-        this.ticketNo = ticketNo;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
 }
