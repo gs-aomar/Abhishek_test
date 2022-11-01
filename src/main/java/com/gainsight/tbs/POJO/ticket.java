@@ -12,5 +12,5 @@ public class ticket
     private int ticketNo;
     private Status status;
     private String time;
-
+    private Type type;
 }

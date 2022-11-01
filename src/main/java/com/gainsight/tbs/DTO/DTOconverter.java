@@ -14,6 +14,7 @@ public class DTOconverter
         ticketDTO.setTicketNo(ticket.getTicketNo());
         ticketDTO.setStatus(ticket.getStatus());
         ticketDTO.setTime(ticket.getTime());
+        ticketDTO.setType(ticket.getType());
         return ticketDTO;
     }
 
@@ -23,6 +24,7 @@ public class DTOconverter
         Ticket.setTicketNo(ticketDTO.getTicketNo());
         Ticket.setStatus(ticketDTO.getStatus());
         Ticket.setTime(ticketDTO.getTime());
+        Ticket.setType(ticketDTO.getType());
         return Ticket;
     }
 
